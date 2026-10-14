@@ -1,0 +1,279 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #26352a;
+  background: #f6f8f3;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  background:
+    linear-gradient(rgba(13, 38, 22, 0.58), rgba(13, 38, 22, 0.58)),
+    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1800&q=85")
+      center / cover no-repeat;
+  color: white;
+}
+
+.landing-content {
+  max-width: 760px;
+  text-align: center;
+}
+
+.landing-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin: 0 0 20px;
+}
+
+.landing-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.primary-button,
+.add-button,
+.checkout-button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  background: #287744;
+  color: white;
+  font-weight: 700;
+}
+
+.primary-button {
+  display: inline-block;
+  margin-top: 18px;
+}
+
+.primary-button:hover,
+.add-button:hover:not(:disabled),
+.checkout-button:hover {
+  background: #1d5c33;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 18px 5%;
+  background: #174b2b;
+  color: white;
+}
+
+.brand {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  padding: 8px 0;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.page-container {
+  width: min(1200px, 92%);
+  margin: 32px auto;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.plant-category {
+  margin-bottom: 44px;
+}
+
+.plant-category h2 {
+  color: #205b35;
+  border-bottom: 2px solid #d6e4d6;
+  padding-bottom: 10px;
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.plant-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.plant-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #e6eee4;
+}
+
+.plant-card h3,
+.plant-card p {
+  margin: 14px 16px 0;
+}
+
+.plant-card .plant-price {
+  font-weight: 700;
+  color: #21643a;
+}
+
+.add-button {
+  margin: 16px;
+  margin-top: auto;
+}
+
+.add-button:disabled {
+  background: #9ba99e;
+  cursor: not-allowed;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 28px;
+  line-height: 1.8;
+  background: white;
+  border-radius: 12px;
+}
+
+.cart-list {
+  display: grid;
+  gap: 18px;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  padding: 18px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cart-row img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-details h3 {
+  margin-top: 0;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.quantity-controls button,
+.remove-button,
+.continue-button {
+  border: 1px solid #287744;
+  border-radius: 6px;
+  background: white;
+  color: #205b35;
+  padding: 7px 12px;
+}
+
+.remove-button {
+  border-color: #a83232;
+  color: #a83232;
+}
+
+.cart-summary {
+  margin-top: 28px;
+  padding: 24px;
+  border-radius: 12px;
+  background: white;
+  text-align: right;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 45px 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+@media (max-width: 760px) {
+  .plant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-header {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .plant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-row img {
+    width: 100%;
+    height: 220px;
+  }
+}
